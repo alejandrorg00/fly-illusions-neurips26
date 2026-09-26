@@ -1,0 +1,777 @@
+/* ============================================================
+   Fly Illusions — NeurIPS 2026
+============================================================ */
+
+:root {
+  --text: #111111;
+  --muted: #666666;
+  --border: #dedede;
+
+  --background: #ffffff;
+  --background-alt: #f7f7f7;
+
+  --content-width: 820px;
+  --wide-width: 1240px;
+
+  --navy: #001f5b;
+}
+
+
+/* ============================================================
+   BASE
+============================================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  color: var(--text);
+  background: var(--background);
+
+  line-height: 1.65;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+
+/* ============================================================
+   LAYOUT
+============================================================ */
+
+.content-container {
+  width: min(
+    calc(100% - 48px),
+    var(--content-width)
+  );
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wide-container {
+  width: min(
+    calc(100% - 48px),
+    var(--wide-width)
+  );
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* ============================================================
+   HERO
+============================================================ */
+
+.hero {
+  padding:
+    105px 24px
+    115px;
+
+  text-align: center;
+}
+
+.hero-inner {
+  max-width: 1120px;
+  margin: auto;
+}
+
+
+/* ============================================================
+   VENUE
+============================================================ */
+
+.venue-line {
+  margin-bottom: 24px;
+
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+
+  gap: 12px;
+
+  font-family:
+    Consolas,
+    "Courier New",
+    monospace;
+
+  font-size: 1.35rem;
+  font-weight: 700;
+
+  letter-spacing: 0.02em;
+}
+
+.venue-name {
+  color: #222;
+}
+
+.venue-separator {
+  color: #999;
+}
+
+.spotlight {
+  color: crimson;
+  font-weight: 800;
+}
+
+
+/* ============================================================
+   TITLE
+============================================================ */
+
+.hero h1 {
+  display: inline-block;
+
+  margin:
+    0
+    0
+    20px;
+
+  font-size: clamp(
+    3.2rem,
+    7vw,
+    6rem
+  );
+
+  line-height: 0.98;
+
+  letter-spacing: -0.03em;
+
+  font-weight: 750;
+
+  transform: scaleX(0.88);
+  transform-origin: center;
+}
+
+
+/* ============================================================
+   SUBTITLE
+============================================================ */
+
+.hero-subtitle {
+  max-width: 900px;
+
+  margin:
+    0 auto
+    38px;
+
+  color: #444;
+
+  font-size: clamp(
+    1.2rem,
+    2vw,
+    1.7rem
+  );
+
+  line-height: 1.4;
+
+  font-weight: 400;
+}
+
+
+/* ============================================================
+   AUTHORS
+============================================================ */
+
+.authors-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  column-gap: 28px;
+  row-gap: 7px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  letter-spacing: 0.005em;
+}
+
+.authors-row-primary {
+  margin-top: 30px;
+  margin-bottom: 10px;
+
+  font-size: 1.08rem;
+}
+
+.authors-row-middle {
+  margin-bottom: 10px;
+
+  font-size: 1.02rem;
+}
+
+.authors-row-last {
+  margin-bottom: 18px;
+
+  font-size: 1.02rem;
+}
+
+.authors-row a {
+  text-decoration: none;
+  color: #111;
+}
+
+.authors-row a:hover {
+  text-decoration: underline;
+}
+
+.authors-row sup {
+  margin-left: 2px;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 0.62em;
+
+  vertical-align: super;
+
+  color: #555;
+}
+
+
+/* ============================================================
+   AFFILIATIONS
+============================================================ */
+
+.affiliations {
+  max-width: 1050px;
+
+  margin: auto;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  column-gap: 24px;
+  row-gap: 4px;
+
+  color: var(--muted);
+
+  font-size: 0.88rem;
+}
+
+.affiliations sup {
+  font-size: 0.7em;
+}
+
+.equal-contribution {
+  margin-top: 10px;
+
+  color: var(--muted);
+
+  font-size: 0.82rem;
+  font-style: italic;
+}
+
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+
+.hero-buttons {
+  margin-top: 34px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  gap: 12px;
+}
+
+.button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  min-width: 118px;
+
+  padding:
+    10px
+    18px;
+
+  border:
+    1px solid
+    #d8d8d8;
+
+  border-radius: 999px;
+
+  color: #111;
+  background: #fff;
+
+  font-size: 0.93rem;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+
+  background: #f6f6f6;
+  border-color: #bcbcbc;
+}
+
+.button.primary {
+  color: #fff;
+
+  background: #111;
+  border-color: #111;
+}
+
+.button.primary:hover {
+  background: #292929;
+}
+
+
+/* GitHub icon */
+
+.button-icon {
+  width: 17px;
+  height: 17px;
+
+  flex-shrink: 0;
+}
+
+
+/* button arrows */
+
+.button-arrow {
+  margin-left: 2px;
+
+  color: var(--navy);
+
+  font-size: 1.08rem;
+  font-weight: 700;
+
+  line-height: 1;
+
+  transition:
+    transform 0.15s ease;
+}
+
+.button:hover .button-arrow {
+  transform: translateX(3px);
+}
+
+.button.primary .button-arrow {
+  color: #6687b5;
+}
+
+
+/* BibTeX quote icon */
+
+.quote-icon {
+  position: relative;
+  top: 0;
+
+  font-family:
+    Consolas,
+    "Courier New",
+    monospace;
+
+  color: slategray;
+
+  font-size: 1.25rem;
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+
+/* ============================================================
+   TEASER VIDEO PLACEHOLDER
+============================================================ */
+
+.teaser-section {
+  padding:
+    0
+    0
+    115px;
+}
+
+.teaser-placeholder {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 21 / 9;
+
+  overflow: hidden;
+
+  border-radius: 16px;
+
+  background: slategray;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.teaser-placeholder:hover {
+  transform: translateY(-4px);
+
+  background: #65717d;
+
+  box-shadow:
+    0 18px 42px
+    rgba(0, 0, 0, 0.14);
+}
+
+.teaser-placeholder-inner {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 13px;
+
+  color: #fff;
+}
+
+.teaser-play {
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-left: 4px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.65);
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  font-size: 1.1rem;
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.teaser-placeholder:hover .teaser-play {
+  transform: scale(1.08);
+
+  background:
+    rgba(255, 255, 255, 0.16);
+}
+
+.teaser-label {
+  font-family:
+    Consolas,
+    "Courier New",
+    monospace;
+
+  font-size: 0.84rem;
+  font-weight: 600;
+
+  letter-spacing: 0.04em;
+
+  opacity: 0.92;
+}
+
+
+/* ============================================================
+   SECTIONS
+============================================================ */
+
+.section {
+  padding:
+    110px
+    0;
+}
+
+.section-alt {
+  background: var(--background-alt);
+}
+
+.section-number {
+  margin-bottom: 18px;
+
+  color: #888;
+
+  font-family:
+    Consolas,
+    "Courier New",
+    monospace;
+
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+.section h2 {
+  margin:
+    0
+    0
+    28px;
+
+  font-size: clamp(
+    2.4rem,
+    5vw,
+    4.4rem
+  );
+
+  line-height: 1.05;
+
+  letter-spacing: -0.045em;
+}
+
+.section p {
+  font-size: 1.06rem;
+}
+
+.lead {
+  color: #333;
+
+  font-size: 1.35rem !important;
+
+  line-height: 1.55;
+}
+
+
+/* ============================================================
+   FIGURE 1
+============================================================ */
+
+.overview-figure {
+  margin-top: 65px;
+}
+
+.setup-image {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+.figure-caption {
+  max-width: 1050px;
+
+  margin:
+    20px auto
+    0;
+
+  color: var(--muted);
+
+  font-size: 0.9rem;
+  line-height: 1.55;
+
+  text-align: left;
+}
+
+
+/* ============================================================
+   CITATION
+============================================================ */
+
+.citation-box {
+  margin-top: 30px;
+
+  padding: 24px;
+
+  overflow-x: auto;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: 12px;
+
+  background: #fafafa;
+}
+
+.citation-box pre {
+  margin: 0;
+
+  font-family:
+    Consolas,
+    "SFMono-Regular",
+    "Liberation Mono",
+    monospace;
+
+  font-size: 0.82rem;
+
+  line-height: 1.6;
+
+  white-space: pre-wrap;
+}
+
+
+/* ============================================================
+   FOOTER
+============================================================ */
+
+footer {
+  padding:
+    50px
+    0;
+
+  border-top:
+    1px solid
+    var(--border);
+}
+
+.footer-inner {
+  display: flex;
+
+  justify-content: space-between;
+
+  color: var(--muted);
+
+  font-size: 0.82rem;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 900px) {
+
+  .teaser-placeholder {
+    aspect-ratio: 16 / 9;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .hero {
+    padding:
+      70px 20px
+      80px;
+  }
+
+  .venue-line {
+    font-size: 1.05rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(
+      3rem,
+      17vw,
+      4.5rem
+    );
+
+    transform: scaleX(0.9);
+  }
+
+  .hero-subtitle {
+    font-size: 1.15rem;
+  }
+
+  .authors-row {
+    flex-direction: column;
+
+    gap: 4px;
+  }
+
+  .affiliations {
+    flex-direction: column;
+
+    gap: 3px;
+  }
+
+  .hero-buttons {
+    gap: 10px;
+  }
+
+  .button {
+    min-width: 105px;
+
+    padding:
+      9px
+      15px;
+  }
+
+  .teaser-section {
+    padding-bottom: 80px;
+  }
+
+  .teaser-placeholder {
+    aspect-ratio: 16 / 9;
+
+    border-radius: 12px;
+  }
+
+  .section {
+    padding:
+      80px
+      0;
+  }
+
+  .content-container,
+  .wide-container {
+    width: min(
+      calc(100% - 32px),
+      var(--wide-width)
+    );
+  }
+
+  .footer-inner {
+    flex-direction: column;
+
+    gap: 4px;
+  }
+
+}
