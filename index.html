@@ -218,7 +218,7 @@
 
 
     <!-- ============================================================
-         TEASER VIDEO
+        TEASER VIDEO
     ============================================================= -->
     <section class="teaser-section">
 
@@ -226,17 +226,18 @@
 
         <div class="teaser-placeholder">
 
-          <div class="teaser-placeholder-inner">
-
-            <span class="teaser-play">
-              ▶
-            </span>
-
-            <span class="teaser-label">
-              Teaser video
-            </span>
-
-          </div>
+          <video
+            class="teaser-video"
+            controls
+            playsinline
+            preload="metadata"
+          >
+            <source
+              src="./assets/videos/flynet_explainer_v4.mp4"
+              type="video/mp4"
+            >
+            Your browser does not support HTML5 video.
+          </video>
 
         </div>
 

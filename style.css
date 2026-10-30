@@ -1,3 +1,4 @@
+
 /* ============================================================
    Fly Illusions — NeurIPS 2026
 ============================================================ */
@@ -422,7 +423,7 @@ video {
 
 
 /* ============================================================
-   TEASER VIDEO PLACEHOLDER
+   TEASER VIDEO
 ============================================================ */
 
 .teaser-section {
@@ -437,92 +438,39 @@ video {
 
   width: 100%;
 
-  aspect-ratio: 21 / 9;
-
   overflow: hidden;
 
   border-radius: 16px;
 
-  background: slategray;
-
-  cursor: pointer;
+  background: #000;
 
   transition:
     transform 0.2s ease,
-    box-shadow 0.2s ease,
-    background-color 0.2s ease;
+    box-shadow 0.2s ease;
 }
 
 .teaser-placeholder:hover {
   transform: translateY(-4px);
-
-  background: #65717d;
 
   box-shadow:
     0 18px 42px
     rgba(0, 0, 0, 0.14);
 }
 
-.teaser-placeholder-inner {
-  position: absolute;
-  inset: 0;
+/* Video follows its native aspect ratio */
 
-  display: flex;
-  flex-direction: column;
+.teaser-placeholder .teaser-video {
+  display: block;
 
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  height: auto;
 
-  gap: 13px;
+  max-width: 100%;
 
-  color: #fff;
-}
+  border: none;
+  border-radius: inherit;
 
-.teaser-play {
-  width: 60px;
-  height: 60px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding-left: 4px;
-
-  border:
-    1px solid
-    rgba(255, 255, 255, 0.65);
-
-  border-radius: 50%;
-
-  background:
-    rgba(255, 255, 255, 0.08);
-
-  font-size: 1.1rem;
-
-  transition:
-    transform 0.2s ease,
-    background-color 0.2s ease;
-}
-
-.teaser-placeholder:hover .teaser-play {
-  transform: scale(1.08);
-
-  background:
-    rgba(255, 255, 255, 0.16);
-}
-
-.teaser-label {
-  font-family:
-    Consolas,
-    "Courier New",
-    monospace;
-
-  font-size: 0.84rem;
-  font-weight: 600;
-
-  letter-spacing: 0.04em;
-
-  opacity: 0.92;
+  background: #000;
 }
 
 
@@ -687,9 +635,7 @@ footer {
 
 @media (max-width: 900px) {
 
-  .teaser-placeholder {
-    aspect-ratio: 16 / 9;
-  }
+  /* Video height remains automatic */
 
 }
 
@@ -749,8 +695,6 @@ footer {
   }
 
   .teaser-placeholder {
-    aspect-ratio: 16 / 9;
-
     border-radius: 12px;
   }
 
